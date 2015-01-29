@@ -22,7 +22,7 @@
     <!-- Your stuff: Third-party css libraries go here -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     {% endblock %}
@@ -34,25 +34,6 @@
   </head>
 
   <body>
-
-    <div class="header navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/">template</a>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-
-          {% if request.user.is_authenticated %}
-            <li><a href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a></li>
-            <li><a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></li>
-          {% else %}
-            <li><a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
-            <li><a href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
     <div class="container">
         
       {% if messages %}
@@ -62,7 +43,20 @@
       {% endif %}
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+        <div class="togglebutton">
+                <label>
+                  Wi-Fi
+                  <input type="checkbox" checked=""><span class="toggle"></span>
+                </label>
+              </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" checked=""><span class="ripple"></span><span class="check"></span> Auto-updates
+            </label>
+        </div>
+        
+        <br/><br/>
+        <button class="btn btn-fab btn-raised btn-primary"><i class="mdi-image-edit"></i></button>
       {% endblock content %}
 
     </div> <!-- /container -->
