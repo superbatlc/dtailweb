@@ -32,3 +32,23 @@
   background-color: #f2dede;
   border-color: #eed3d7;
 }
+
+ #first-col.width,
+ #sec-col.width {
+    height: auto;
+    -webkit-transition: width 0.35s ease;
+    -moz-transition: width 0.35s ease;
+    -o-transition: width 0.35s ease;
+    transition: width 0.35s ease;
+}
+
+#first-col div.panel-body a:link{
+	color:#666;
+	text-decoration: none;
+}
+
+#first-col div.panel-body a.new{
+	text-decoration: none;
+	color:#000;
+	font-weight:bold;
+}
