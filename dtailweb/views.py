@@ -4,5 +4,5 @@ from django.template.loader import render_to_string
 from django.template import RequestContext
 
 
-def test(request):
-    return render_to_response('test.html', RequestContext(request, {}))
+def home(request):
+    return render_to_response('base.html', RequestContext(request, {}))

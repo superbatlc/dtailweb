@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'calls',
+    'phonegroups',
+    'systems',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,8 +61,12 @@ WSGI_APPLICATION = 'dtailweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dtail2',
+        'USER': 'dtailuser',
+        'PASSWORD': 'dt@1lu53r',
+        'HOST': '192.168.150.10',
+        'PORT': '',
     }
 }
 
